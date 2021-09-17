@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TIE
+  m_text: NEW TEXT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a0dde10f125b6244698d948c6ab8856c, type: 2}
   m_sharedMaterial: {fileID: -2351713267704728536, guid: a0dde10f125b6244698d948c6ab8856c, type: 2}
@@ -411,7 +411,6 @@ GameObject:
   - component: {fileID: 1216673952068085175}
   - component: {fileID: 1216673952068085172}
   - component: {fileID: 8685643814273701417}
-  - component: {fileID: 3860287771830107613}
   m_Layer: 5
   m_Name: RESULTS
   m_TagString: Untagged
@@ -495,26 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player1_EndMove: {fileID: 1216673950610310253}
   Player2_EndMove: {fileID: 1216673952120530190}
-  Result_Text: {fileID: 0}
---- !u!95 &3860287771830107613
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216673952068085162}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6775e493339bc3d41aad76df1b92df76, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  Result_Text: {fileID: 1216673951186406899}
 --- !u!1 &1216673952120530188
 GameObject:
   m_ObjectHideFlags: 0

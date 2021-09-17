@@ -189,7 +189,9 @@ MonoBehaviour:
   moveStop: {fileID: 21300000, guid: f2a34faf07e03db4fa741286fa2b3b35, type: 3}
   moveHammer: {fileID: 21300000, guid: 97b1a1cfafc0ae54cb5fcc588ef1b579, type: 3}
   moveTime: {fileID: 21300000, guid: eb23b04b6f6959442bcfb7a573521814, type: 3}
-  Timer: 10
+  Timer: 1
+  Player2: 0
+  resultsPrefab: {fileID: 1216673952068085162, guid: 4741c61f2831a824093b30d0e6724e57, type: 3}
 --- !u!114 &314199959
 MonoBehaviour:
   m_ObjectHideFlags: 0

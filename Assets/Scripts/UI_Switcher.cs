@@ -27,12 +27,6 @@ public class UI_Switcher : MonoBehaviour
 
     private void Update()
     {
-        if (Timer <= 0)
-        {
-            PAUSED = true;
-            GAMEOVER = true;
-        }
-
         if(!PAUSED && !GAMEOVER)
         {
             if(Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D))
@@ -71,10 +65,41 @@ public class UI_Switcher : MonoBehaviour
                 if(ComputerMove == 2) player2Move.sprite = moveTime;
             }
         }
-
-        if (GAMEOVER)
+        if (Timer <= 0 && !GAMEOVER) 
         {
-            Instantiate(resultsPrefab, this.transform);
+            GAMEOVER = true;
+            PAUSED = true;
+            GameObject _go = Instantiate(resultsPrefab, this.transform);
+            _go.GetComponent<ResultsPanel>().Player1_EndMove.sprite = player1Move.sprite;
+            _go.GetComponent<ResultsPanel>().Player2_EndMove.sprite = player2Move.sprite;
+            if (!Player2)
+            {
+                if (player1Move.sprite == moveStop && player2Move.sprite == moveStop) _go.GetComponent<ResultsPanel>().Result_Text.text = "TIE GAME";
+                if (player1Move.sprite == moveStop && player2Move.sprite == moveHammer) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER WINS";
+                if (player1Move.sprite == moveStop && player2Move.sprite == moveTime) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER LOSES";
+
+                if (player1Move.sprite == moveHammer && player2Move.sprite == moveStop) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER LOSES";
+                if (player1Move.sprite == moveHammer && player2Move.sprite == moveHammer) _go.GetComponent<ResultsPanel>().Result_Text.text = "TIE GAME";
+                if (player1Move.sprite == moveHammer && player2Move.sprite == moveTime) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER WINS";
+
+                if (player1Move.sprite == moveTime && player2Move.sprite == moveStop) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER WINS";
+                if (player1Move.sprite == moveTime && player2Move.sprite == moveHammer) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER LOSES";
+                if (player1Move.sprite == moveTime && player2Move.sprite == moveTime) _go.GetComponent<ResultsPanel>().Result_Text.text = "TIE GAME";
+            }
+            if (Player2)
+            {
+                if (player1Move.sprite == moveStop && player2Move.sprite == moveStop) _go.GetComponent<ResultsPanel>().Result_Text.text = "TIE GAME";
+                if (player1Move.sprite == moveStop && player2Move.sprite == moveHammer) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER1 WINS";
+                if (player1Move.sprite == moveStop && player2Move.sprite == moveTime) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER2 WINS";
+
+                if (player1Move.sprite == moveHammer && player2Move.sprite == moveStop) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER2 WINS";
+                if (player1Move.sprite == moveHammer && player2Move.sprite == moveHammer) _go.GetComponent<ResultsPanel>().Result_Text.text = "TIE GAME";
+                if (player1Move.sprite == moveHammer && player2Move.sprite == moveTime) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER1 WINS";
+
+                if (player1Move.sprite == moveTime && player2Move.sprite == moveStop) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER1 WINS";
+                if (player1Move.sprite == moveTime && player2Move.sprite == moveHammer) _go.GetComponent<ResultsPanel>().Result_Text.text = "PLAYER2 WINS";
+                if (player1Move.sprite == moveTime && player2Move.sprite == moveTime) _go.GetComponent<ResultsPanel>().Result_Text.text = "TIE GAME";
+            }
         }
     }
 
