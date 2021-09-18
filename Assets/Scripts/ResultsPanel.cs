@@ -7,4 +7,10 @@ public class ResultsPanel : MonoBehaviour
 {
     public Image Player1_EndMove, Player2_EndMove;
     public TMPro.TextMeshProUGUI Result_Text;
+
+
+    public void RestartGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+    }
 }

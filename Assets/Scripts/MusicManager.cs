@@ -16,11 +16,13 @@ public class MusicManager : MonoBehaviour
 
     public void PlayBeep()
     {
-        SFX.PlayOneShot(beep);
+        if(!SFX.isPlaying)
+            SFX.PlayOneShot(beep);
     }
 
     public void PlaySlap()
     {
-        SFX.PlayOneShot(slap);
+        if (!SFX.isPlaying)
+            SFX.PlayOneShot(slap);
     }
 }

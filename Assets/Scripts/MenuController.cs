@@ -8,7 +8,6 @@ public class MenuController : MonoBehaviour
     public Color retroGreen, retroPurple, retroBlue, retroPink, retroYellow;
     public GameObject BG, player1Icon, player2Icon, computerIcon;
     public TMPro.TextMeshProUGUI buttonText;
-    public bool TwoPlayer;
 
     private void Awake()
     {
@@ -32,8 +31,8 @@ public class MenuController : MonoBehaviour
 
     public void ChangeNumberOfPlayers()
     {
-        TwoPlayer = !TwoPlayer;
-        if (TwoPlayer)
+        Settings.instance.TwoPlayer = !Settings.instance.TwoPlayer;
+        if (Settings.instance.TwoPlayer)
         {
             player2Icon.SetActive(true);
             computerIcon.SetActive(false);

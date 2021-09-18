@@ -11,5 +11,12 @@ public class Settings : MonoBehaviour
     {
         instance = this;
         DontDestroyOnLoad(gameObject);
+        StartCoroutine(BeginGame());
+    }
+
+    IEnumerator BeginGame()
+    {
+        yield return new WaitForSeconds(2.5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 }
